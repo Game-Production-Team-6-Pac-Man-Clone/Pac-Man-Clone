@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4932172606028498235}
   - component: {fileID: 7617018768079687479}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5488322844179159841}
   - component: {fileID: 4326716577019103474}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: End-Vulnerable
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -178,7 +178,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1768573430033260084}
   - component: {fileID: 5939496830083797002}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Vulnerable
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -269,7 +269,7 @@ GameObject:
   - component: {fileID: 7989367530008155860}
   - component: {fileID: 6760387154317772007}
   - component: {fileID: 4116183731706613371}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: GhostBase
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -387,7 +387,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   initialBehavior: {fileID: 0}
-  player: {fileID: 0}
+  player: {fileID: 2199270827671605428, guid: 15c4b9a5f963aab40bda078b00aef1b7, type: 3}
   points: 200
 --- !u!114 &930504100354342606
 MonoBehaviour:

@@ -179,4 +179,4 @@ MonoBehaviour:
   initialDirection: {x: 0, y: 0}
   wallLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 256

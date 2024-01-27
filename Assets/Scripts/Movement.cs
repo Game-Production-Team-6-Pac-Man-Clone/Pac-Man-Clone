@@ -53,11 +53,11 @@ public class Movement : MonoBehaviour
         if (forced || !Occupied(direction))
         {
             this.direction = direction;
-            this.nextDirection = Vector2.zero;
+            nextDirection = Vector2.zero;
         }
         else
         {
-            this.nextDirection = direction;
+            nextDirection = direction;
         }
     }
 

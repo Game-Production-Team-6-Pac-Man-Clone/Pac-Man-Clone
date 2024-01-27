@@ -22,11 +22,11 @@ public class Ghost : MonoBehaviour
 
     private void Awake()
     {
-        this.movement = GetComponent<Movement>();
-        this.homebase = GetComponent<GhostHomeBase>();
-        this.retreat = GetComponent<GhostRetreat>();
-        this.chase = GetComponent<GhostChase>();
-        this.frightened = GetComponent<GhostFrightened>();
+        movement = GetComponent<Movement>();
+        homebase = GetComponent<GhostHomeBase>();
+        retreat = GetComponent<GhostRetreat>();
+        chase = GetComponent<GhostChase>();
+        frightened = GetComponent<GhostFrightened>();
     }
 
     private void Start()
@@ -36,19 +36,19 @@ public class Ghost : MonoBehaviour
 
     public void ResetState()
     {
-        this.gameObject.SetActive(true);
-        this.movement.ResetState();
+        gameObject.SetActive(true);
+        movement.ResetState();
 
                 this.frightened.Disable();
-        this.chase.Disable();
-        this.retreat.Enable();
+        chase.Disable();
+        retreat.Enable();
         
-        if (this.homebase != this.initialBehavior){
-            this.homebase.Disable();
+        if (homebase != this.initialBehavior){
+            homebase.Disable();
     }
 
-    if (this.initialBehavior != null){
-        this.initialBehavior.Enable();
+    if (initialBehavior != null){
+        initialBehavior.Enable();
     }
 }
 
@@ -56,7 +56,7 @@ public class Ghost : MonoBehaviour
     {
         if (collision.gameObject.layer == LayerMask.NameToLayer("Player"))
         {
-            if (this.frightened.enabled){
+            if (frightened.enabled){
                 FindObjectOfType<GameManager>().GhostEaten(this);
             } else {
                 FindObjectOfType<GameManager>().PlayerDefeated();
