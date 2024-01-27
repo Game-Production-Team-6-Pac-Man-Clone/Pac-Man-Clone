@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class Pellete : MonoBehaviour
 {
-    public int point = 10;
+    public int points = 10;
 
     protected virtual void Eat()
     {
-        this.gameObject.SetActive(false);
+        FindObjectOfType<GameManager>().PelletEaten(this);
     }
 
     private void OnTriggerEnter2D(Collider2D whatIHit)
