@@ -44,7 +44,7 @@ public class GameManager : MonoBehaviour //To Do For Final Submission: Score, Ga
             this.ghost[i].gameObject.SetActive(true);
         }
 
-        this.player.gameObject.SetActive(true);
+        this.player.ResetState();
     }
 
 
