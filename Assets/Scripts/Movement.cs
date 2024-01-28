@@ -1,55 +1,63 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
+[RequireComponent(typeof(Rigidbody2D))]
 public class Movement : MonoBehaviour
 {
-    public float speed = .8f;
-
+    public float speed = 8f;
     public float speedMultiplier = 1f;
-
     public Vector2 initialDirection;
-
-    public LayerMask wallLayer; //MAKE WALLS A DIFF LAYER SO THIS AFFECTS THEM//
+    public LayerMask obstacleLayer;
 
     public new Rigidbody2D rigidbody { get; private set; }
     public Vector2 direction { get; private set; }
-
     public Vector2 nextDirection { get; private set; }
-
     public Vector3 startingPosition { get; private set; }
 
     private void Awake()
     {
-        this.rigidbody = GetComponent<Rigidbody2D>();
-        this.startingPosition = this.transform.position;
+        rigidbody = GetComponent<Rigidbody2D>();
+        startingPosition = transform.position;
     }
-    void Start()
+
+    private void Start()
     {
         ResetState();
     }
 
     public void ResetState()
     {
-        this.speedMultiplier = 1f;
-        this.direction = this.initialDirection;
-        this.nextDirection = Vector2.zero;
-        this.transform.position = this.startingPosition;
-        this.rigidbody.isKinematic = false;
-        this.enabled = true;
-
+        speedMultiplier = 1f;
+        direction = initialDirection;
+        nextDirection = Vector2.zero;
+        transform.position = startingPosition;
+        rigidbody.isKinematic = false;
+        enabled = true;
     }
+
+    private void Update()
+    {
+        // Try to move in the next direction while it's queued to make movements
+        // more responsive
+        if (nextDirection != Vector2.zero)
+        {
+            SetDirection(nextDirection);
+        }
+    }
+
     private void FixedUpdate()
     {
-        Vector2 position = this.rigidbody.position;
-        Vector2 translation = this.direction * this.speed * this.speedMultiplier;
+        Vector2 position = rigidbody.position;
+        Vector2 translation = direction * speed * speedMultiplier * Time.fixedDeltaTime;
 
-        this.rigidbody.MovePosition(position + translation);
-
+        rigidbody.MovePosition(position + translation);
+        Debug.Log("Direction" + nextDirection);
     }
+
     public void SetDirection(Vector2 direction, bool forced = false)
     {
+        // Only set the direction if the tile in that direction is available
+        // otherwise we set it as the next direction so it'll automatically be
+        // set when it does become available
         if (forced || !Occupied(direction))
         {
             this.direction = direction;
@@ -63,17 +71,9 @@ public class Movement : MonoBehaviour
 
     public bool Occupied(Vector2 direction)
     {
-        RaycastHit2D hit = Physics2D.BoxCast(this.transform.position, Vector2.one * 0.75f, 0.0f, direction, 1.5f, this.wallLayer);
+        // If no collider is hit then there is no obstacle in that direction
+        RaycastHit2D hit = Physics2D.BoxCast(transform.position, Vector2.one * .2f, 0f, direction, .1f, obstacleLayer);
         return hit.collider != null;
     }
 
-
-    // Update is called once per frame
-    private void Update()
-    {
-        if (this.nextDirection != Vector2.zero)
-        {
-            SetDirection(this.nextDirection);
-        }
-    }
 }

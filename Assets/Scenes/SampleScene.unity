@@ -965,6 +965,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 7677277425701381720, guid: ec94de7b3d7f33e4d82b27a7cff2dd42, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8159502205451871335, guid: ec94de7b3d7f33e4d82b27a7cff2dd42, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -3452,7 +3456,7 @@ TilemapCollider2D:
   m_GameObject: {fileID: 1389229868}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 873b9f53e888ef34e9eb44edbac7ddc7, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -4959,7 +4963,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 731124857171721156, guid: 15c4b9a5f963aab40bda078b00aef1b7, type: 3}
       propertyPath: m_Radius
-      value: 0.055
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: 731124857171721156, guid: 15c4b9a5f963aab40bda078b00aef1b7, type: 3}
       propertyPath: m_Offset.x
@@ -4967,19 +4971,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2199270827671605428, guid: 15c4b9a5f963aab40bda078b00aef1b7, type: 3}
       propertyPath: m_LocalScale.x
-      value: 2.4
+      value: 2.8
       objectReference: {fileID: 0}
     - target: {fileID: 2199270827671605428, guid: 15c4b9a5f963aab40bda078b00aef1b7, type: 3}
       propertyPath: m_LocalScale.y
-      value: 2.3
+      value: 2.7
       objectReference: {fileID: 0}
     - target: {fileID: 2199270827671605428, guid: 15c4b9a5f963aab40bda078b00aef1b7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.0229
+      value: -0.01
       objectReference: {fileID: 0}
     - target: {fileID: 2199270827671605428, guid: 15c4b9a5f963aab40bda078b00aef1b7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.63
+      value: -1.609
       objectReference: {fileID: 0}
     - target: {fileID: 2199270827671605428, guid: 15c4b9a5f963aab40bda078b00aef1b7, type: 3}
       propertyPath: m_LocalPosition.z
@@ -5018,16 +5022,28 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 5468153310525216376, guid: 15c4b9a5f963aab40bda078b00aef1b7, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5468153310525216376, guid: 15c4b9a5f963aab40bda078b00aef1b7, type: 3}
       propertyPath: m_TagString
       value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 5747221457642609360, guid: 15c4b9a5f963aab40bda078b00aef1b7, type: 3}
       propertyPath: speed
-      value: 0.04
+      value: 1.6
       objectReference: {fileID: 0}
     - target: {fileID: 5747221457642609360, guid: 15c4b9a5f963aab40bda078b00aef1b7, type: 3}
       propertyPath: wallLayer.m_Bits
-      value: 0
+      value: 256
+      objectReference: {fileID: 0}
+    - target: {fileID: 5747221457642609360, guid: 15c4b9a5f963aab40bda078b00aef1b7, type: 3}
+      propertyPath: initialDirection.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5747221457642609360, guid: 15c4b9a5f963aab40bda078b00aef1b7, type: 3}
+      propertyPath: obstacleLayer.m_Bits
+      value: 256
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
