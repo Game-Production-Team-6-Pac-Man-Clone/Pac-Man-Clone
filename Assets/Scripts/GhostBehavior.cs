@@ -1,6 +1,6 @@
 using UnityEngine;
 
-[RequireComponent(typeof(Ghost))]
+
 public abstract class GhostBehavior : MonoBehaviour
 {
     public Ghost ghost {get; private set; }

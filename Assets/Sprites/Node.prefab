@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3690458054790496712}
   - component: {fileID: 2544810070158246717}
-  m_Layer: 0
-  m_Name: Nodes
+  m_Layer: 10
+  m_Name: Node
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -56,7 +56,7 @@ GameObject:
   - component: {fileID: 6198014286689481649}
   - component: {fileID: 3961139595652650427}
   - component: {fileID: 6953161393806791031}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Layer1
   m_TagString: Untagged
   m_Icon: {fileID: 0}

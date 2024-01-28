@@ -63,7 +63,7 @@ PrefabInstance:
     - target: {fileID: 7955563918988995357, guid: 3b0b0fa4ad69f7747a9e41db290401e0, type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 2199270827671605428, guid: 15c4b9a5f963aab40bda078b00aef1b7, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 7955563918988995357, guid: 3b0b0fa4ad69f7747a9e41db290401e0, type: 3}
       propertyPath: initialBehavior
       value: 
