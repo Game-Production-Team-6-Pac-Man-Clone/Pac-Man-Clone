@@ -7,7 +7,7 @@ public class player : MonoBehaviour
 {
     public float playerSpeed;
 
-    private float horizontalScreenLimit = 3f;
+    private float horizontalScreenLimit = 2.9f;
 
     public Movement movement { get; private set; }
 
@@ -51,11 +51,11 @@ public class player : MonoBehaviour
         transform.Translate(new Vector2(Input.GetAxis("Horizontal"), 0) * Time.deltaTime * playerSpeed);
         if (transform.position.x > horizontalScreenLimit)
         {
-            transform.position = new Vector2((transform.position.x * -1f) +1, transform.position.y);
+            transform.position = new Vector2((transform.position.x * -1f) + .5f, transform.position.y);
         }
         if (transform.position.x < -horizontalScreenLimit)
                 {
-            transform.position = new Vector2((transform.position.x * -1f) - 1, transform.position.y);
+            transform.position = new Vector2((transform.position.x * -1f) - .5f, transform.position.y);
         }
     }
     }
