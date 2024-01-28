@@ -264,6 +264,7 @@ MonoBehaviour:
   - {fileID: 411616810}
   player: {fileID: 8160945139296812858}
   pellete: {fileID: 556410257303881666}
+  scoreText: {fileID: 2056468316}
 --- !u!4 &373230324
 Transform:
   m_ObjectHideFlags: 0
