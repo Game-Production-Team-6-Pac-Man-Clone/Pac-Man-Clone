@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour //To Do For Final Submission: Score, Game Over, Level Change. -AC//
@@ -6,7 +7,9 @@ public class GameManager : MonoBehaviour //To Do For Final Submission: Score, Ga
 
     public player player;
 
-    public Transform pellete; 
+    public Transform pellete;
+
+    public TextMeshProUGUI scoreText;
 
     public int score { get; private set; }
     public int lives { get; private set; }
@@ -16,6 +19,7 @@ public class GameManager : MonoBehaviour //To Do For Final Submission: Score, Ga
     private void Start()
     {
         NewGame();
+       
     }
 
     private void NewGame()
@@ -86,6 +90,8 @@ public class GameManager : MonoBehaviour //To Do For Final Submission: Score, Ga
     {
         pellete.gameObject.SetActive(false);
         SetScore(this.score + pellete.points);
+
+        scoreText.text = ""+this.score;
     }
 
     public void PowerPelletEaten (PowerPellet pellete)
