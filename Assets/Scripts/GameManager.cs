@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour //To Do For Final Submission: Score, Game Over, Level Change. -AC//
 {
@@ -20,6 +21,19 @@ public class GameManager : MonoBehaviour //To Do For Final Submission: Score, Ga
     {
         NewGame();
        
+    }
+
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            RestartGame();
+        }
+    }
+
+    public void RestartGame()
+    {   
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     private void NewGame()
