@@ -36,7 +36,7 @@ public class GameManager : MonoBehaviour //To Do For Final Submission: Score, Ga
         middlelife.gameObject.SetActive(true);
         lastlife.gameObject.SetActive(true);
     }
-    IEnumerator startcountdown()
+    IEnumerator startcountdown() //Short countdown at start of game
     {
         Time.timeScale = 0f;
         yield return new WaitForSecondsRealtime(3);
@@ -52,7 +52,7 @@ public class GameManager : MonoBehaviour //To Do For Final Submission: Score, Ga
             RestartGame();
         }
 
-        if (Input.GetKeyDown("escape"))
+        if (Input.GetKeyDown("escape")) //Quit out game button
         {
             Debug.Log("Player has quit");
             Application.Quit();
@@ -96,7 +96,7 @@ public class GameManager : MonoBehaviour //To Do For Final Submission: Score, Ga
 
     private void GameOver()
     {
-        Playerlosttext.enabled = true;
+        Playerlosttext.enabled = true; //gameover text
     }
 
     private void SetScore(int score)
