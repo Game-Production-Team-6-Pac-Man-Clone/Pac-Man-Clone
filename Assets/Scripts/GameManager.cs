@@ -16,6 +16,12 @@ public class GameManager : MonoBehaviour //To Do For Final Submission: Score, Ga
 
     public TextMeshProUGUI PlayerReadytext;
 
+    public TextMeshProUGUI Playerlosttext;
+
+    public GameObject firstlife;
+    public GameObject lastlife;
+    public GameObject middlelife;
+
     public int score { get; private set; }
     public int lives { get; private set; }
 
@@ -23,6 +29,7 @@ public class GameManager : MonoBehaviour //To Do For Final Submission: Score, Ga
 
     private void Start()
     {
+        Playerlosttext.enabled = false;
         NewGame();
         StartCoroutine(startcountdown()); //Small countdown at start of game
     }
@@ -41,6 +48,12 @@ public class GameManager : MonoBehaviour //To Do For Final Submission: Score, Ga
         {
             RestartGame();
         }
+
+        if (Input.GetKeyDown("escape"))
+        {
+            Debug.Log("Player has quit");
+            Application.Quit();
+        }
     }
 
     public void RestartGame()
@@ -51,7 +64,7 @@ public class GameManager : MonoBehaviour //To Do For Final Submission: Score, Ga
     private void NewGame()
     {
         SetScore(0);
-        SetLives(2);
+        SetLives(3);
     }
 
     private void NewRound()
@@ -80,7 +93,7 @@ public class GameManager : MonoBehaviour //To Do For Final Submission: Score, Ga
 
     private void GameOver()
     {
-
+        Playerlosttext.enabled = true;
     }
 
     private void SetScore(int score)
@@ -108,7 +121,17 @@ public class GameManager : MonoBehaviour //To Do For Final Submission: Score, Ga
         if (this.lives > 0) {
             Invoke(nameof(ResetState), 2.0f);
         } else {
+            lastlife.gameObject.SetActive(false);
             GameOver();
+        }
+
+        if (this.lives < 3)
+        {
+            firstlife.gameObject.SetActive(false);
+        }
+        else if (this.lives < 2)
+        {
+            middlelife.gameObject.SetActive(false);
         }
     }
 
