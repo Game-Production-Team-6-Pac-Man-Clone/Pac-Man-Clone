@@ -69,7 +69,7 @@ public class Movement : MonoBehaviour
     public bool Occupied(Vector2 direction)
     {
       
-        RaycastHit2D hit = Physics2D.BoxCast(transform.position, Vector2.one * .2f, 0f, direction, .1f, wallLayer);
+        RaycastHit2D hit = Physics2D.BoxCast(transform.position, Vector2.one * .15f, 0f, direction, .15f, wallLayer);
         return hit.collider != null;
     }
 
