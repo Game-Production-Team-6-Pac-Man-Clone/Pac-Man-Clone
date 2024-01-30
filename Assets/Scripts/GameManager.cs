@@ -18,7 +18,7 @@ public class GameManager : MonoBehaviour //To Do For Final Submission: Score, Ga
 
     public TextMeshProUGUI Playerlosttext;
 
-    public GameObject firstlife;
+    public GameObject firstlife; //Life capsules
     public GameObject lastlife;
     public GameObject middlelife;
 
@@ -32,6 +32,9 @@ public class GameManager : MonoBehaviour //To Do For Final Submission: Score, Ga
         Playerlosttext.enabled = false;
         NewGame();
         StartCoroutine(startcountdown()); //Small countdown at start of game
+        firstlife.gameObject.SetActive(true);
+        middlelife.gameObject.SetActive(true);
+        lastlife.gameObject.SetActive(true);
     }
     IEnumerator startcountdown()
     {
