@@ -1,6 +1,8 @@
+using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour //To Do For Final Submission: Score, Game Over, Level Change. -AC//
 {
@@ -12,6 +14,8 @@ public class GameManager : MonoBehaviour //To Do For Final Submission: Score, Ga
 
     public TextMeshProUGUI scoreText;
 
+    public TextMeshProUGUI PlayerReadytext;
+
     public int score { get; private set; }
     public int lives { get; private set; }
 
@@ -20,8 +24,16 @@ public class GameManager : MonoBehaviour //To Do For Final Submission: Score, Ga
     private void Start()
     {
         NewGame();
-       
+        StartCoroutine(startcountdown()); //Small countdown at start of game
     }
+    IEnumerator startcountdown()
+    {
+        Time.timeScale = 0f;
+        yield return new WaitForSecondsRealtime(3);
+        Time.timeScale = 1f;
+        PlayerReadytext.enabled = false;
+    }
+  
 
     void Update()
     {
