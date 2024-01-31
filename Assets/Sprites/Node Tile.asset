@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9d1514134bc4fbd41bb739b1b9a49231, type: 3}
-  m_Name: NodeTile
+  m_Name: Node Tile
   m_EditorClassIdentifier: 
   m_DefaultSprite: {fileID: 21300000, guid: 9c13559b346f64a4eb32cfb83845b2b1, type: 3}
-  m_DefaultGameObject: {fileID: 3628822132601858998, guid: 7d95caa904d71f540b33cc7308c610ef, type: 3}
+  m_DefaultGameObject: {fileID: 1314429948307670628, guid: 7d95caa904d71f540b33cc7308c610ef, type: 3}
   m_DefaultColliderType: 1
   m_TilingRules: []

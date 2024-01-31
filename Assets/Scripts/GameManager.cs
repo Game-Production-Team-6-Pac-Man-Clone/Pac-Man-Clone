@@ -6,9 +6,9 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour //To Do For Final Submission: Score, Game Over, Level Change. -AC//
 {
-    public Ghost[] ghost;
+    public Ghost[] ghosts;
 
-    public player player;
+    public Player player;
 
     public Transform pellete;
 
@@ -47,7 +47,7 @@ public class GameManager : MonoBehaviour //To Do For Final Submission: Score, Ga
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.R))
+        if (Input.GetKeyDown(KeyCode.R)) //Restart button
         {
             RestartGame();
         }
@@ -86,8 +86,8 @@ public class GameManager : MonoBehaviour //To Do For Final Submission: Score, Ga
 
     private void ResetState(){
 
-        for (int i = 0; i < this.ghost.Length; i++) {
-            this.ghost[i].gameObject.SetActive(true);
+        for (int i = 0; i < this.ghosts.Length; i++) {
+            this.ghosts[i].gameObject.SetActive(true);
         }
 
         this.player.ResetState();
