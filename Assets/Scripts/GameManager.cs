@@ -12,14 +12,20 @@ public class GameManager : MonoBehaviour //To Do For Final Submission: Score, Ga
 
     public Transform pellete;
 
+    [SerializeField] TextMeshProUGUI highscoreText;
+
     public TextMeshProUGUI scoreText;
 
     public TextMeshProUGUI PlayerReadytext;
 
     public TextMeshProUGUI Playerlosttext;
 
+    int scoreCount;
+
     public GameObject firstlife; //Life capsules
+
     public GameObject lastlife;
+
     public GameObject middlelife;
 
     public int score { get; private set; }
@@ -29,12 +35,14 @@ public class GameManager : MonoBehaviour //To Do For Final Submission: Score, Ga
 
     private void Start()
     {
+        UpdateHighscoreText();
         Playerlosttext.enabled = false;
         NewGame();
         StartCoroutine(startcountdown()); //Small countdown at start of game
         firstlife.gameObject.SetActive(true);
         middlelife.gameObject.SetActive(true);
         lastlife.gameObject.SetActive(true);
+        score = 0;
     }
     IEnumerator startcountdown() //Short countdown at start of game
     {
@@ -102,7 +110,28 @@ public class GameManager : MonoBehaviour //To Do For Final Submission: Score, Ga
     private void SetScore(int score)
     {
         this.score = score;
+        scoreCount = score;
+        Debug.Log("highscorecount" + scoreCount);
+        Debug.Log("normalscorecount" + this.score);
+        CheckHighScore();
+        UpdateHighscoreText();
     }
+
+    void CheckHighScore()
+    {
+        if (scoreCount > PlayerPrefs.GetInt("HighScore", 0))
+        {
+            Debug.Log("Highscore Updated");
+            PlayerPrefs.SetInt("HighScore", scoreCount);
+        }
+    }
+
+    private void UpdateHighscoreText()
+    {
+        Debug.Log("" + highscoreText.text);
+        highscoreText.text = $"{PlayerPrefs.GetInt("HighScore", 0)}";
+    }
+
 
     private void SetLives(int lives)
     {
@@ -140,6 +169,7 @@ public class GameManager : MonoBehaviour //To Do For Final Submission: Score, Ga
 
     public void PelletEaten(Pellete pellete)
     {
+       
         pellete.gameObject.SetActive(false);
         SetScore(this.score + pellete.points);
 
@@ -150,7 +180,20 @@ public class GameManager : MonoBehaviour //To Do For Final Submission: Score, Ga
     {
         PelletEaten(pellete);
 
-
+        StartCoroutine(powercountdown());
     }
 
+    IEnumerator powercountdown() //Power Up Countdown
+    {
+        Debug.Log("POWER UP!");
+
+        yield return new WaitForSecondsRealtime(8);
+
+        Debug.Log("POWER UP GONE!");
+
+
+
+    }
 }
+
+
