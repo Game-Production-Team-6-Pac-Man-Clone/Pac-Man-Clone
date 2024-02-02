@@ -9,11 +9,14 @@ public class Player : MonoBehaviour
 
     private float horizontalScreenLimit = 2.9f;
 
+    public bool isInhaling;
+
     public Movement movement { get; private set; }
 
     private void Awake()
     {
         this.movement = GetComponent<Movement>();
+        isInhaling = false;
     }
     private void Update()
     {
