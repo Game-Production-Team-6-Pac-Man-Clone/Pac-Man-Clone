@@ -2877,6 +2877,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ghost_Inky
       objectReference: {fileID: 0}
+    - target: {fileID: 4787939070654496401, guid: a0c8b0fcd4e37a24fafcd5e9f4a433d9, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6154,7 +6158,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 6
-      m_TileSpriteIndex: 5
+      m_TileSpriteIndex: 8
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -6204,7 +6208,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 2
-      m_TileSpriteIndex: 1
+      m_TileSpriteIndex: 5
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -6284,7 +6288,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 1
-      m_TileSpriteIndex: 0
+      m_TileSpriteIndex: 1
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -8185,10 +8189,10 @@ Tilemap:
   - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: 132454fe5bdcbbe44910bfdfd70c7025, type: 2}
   m_TileSpriteArray:
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   - m_RefCount: 1
     m_Data: {fileID: 576539580, guid: ef59f1b896193584fbb7dbad889c059d, type: 3}
-  - m_RefCount: 1
-    m_Data: {fileID: -839513310, guid: ef59f1b896193584fbb7dbad889c059d, type: 3}
   - m_RefCount: 4
     m_Data: {fileID: -141134999, guid: ef59f1b896193584fbb7dbad889c059d, type: 3}
   - m_RefCount: 2
@@ -8196,13 +8200,13 @@ Tilemap:
   - m_RefCount: 1
     m_Data: {fileID: -2130757031, guid: ef59f1b896193584fbb7dbad889c059d, type: 3}
   - m_RefCount: 1
-    m_Data: {fileID: -1099759690, guid: ef59f1b896193584fbb7dbad889c059d, type: 3}
+    m_Data: {fileID: -839513310, guid: ef59f1b896193584fbb7dbad889c059d, type: 3}
   - m_RefCount: 4
     m_Data: {fileID: -929765221, guid: ef59f1b896193584fbb7dbad889c059d, type: 3}
   - m_RefCount: 386
     m_Data: {fileID: 21300000, guid: 258649841852773418e58100b890b80e, type: 3}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
+  - m_RefCount: 1
+    m_Data: {fileID: -1099759690, guid: ef59f1b896193584fbb7dbad889c059d, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: 1277436080, guid: ef59f1b896193584fbb7dbad889c059d, type: 3}
   - m_RefCount: 1
@@ -12756,6 +12760,8 @@ MonoBehaviour:
   firstlife: {fileID: 1673056359}
   lastlife: {fileID: 517802551}
   middlelife: {fileID: 947011957}
+  Pelletes: {fileID: 802231912}
+  ps: {fileID: 8160945139296812858}
 --- !u!4 &373230324
 Transform:
   m_ObjectHideFlags: 0
@@ -14383,6 +14389,10 @@ PrefabInstance:
     - target: {fileID: 8377630335982437687, guid: 601eadc37c3079649afb239fade55bca, type: 3}
       propertyPath: m_Name
       value: Ghost_Clyde
+      objectReference: {fileID: 0}
+    - target: {fileID: 8377630335982437687, guid: 601eadc37c3079649afb239fade55bca, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -46815,6 +46825,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ghost_Blinky
       objectReference: {fileID: 0}
+    - target: {fileID: 8712292123772752819, guid: c415313bf9160704a9f6f4ebab168188, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -47610,6 +47624,10 @@ PrefabInstance:
     - target: {fileID: 4619481354973543832, guid: 7ef71fe0c863e504db447392878d31bc, type: 3}
       propertyPath: m_Name
       value: Ghost_Pinky
+      objectReference: {fileID: 0}
+    - target: {fileID: 4619481354973543832, guid: 7ef71fe0c863e504db447392878d31bc, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

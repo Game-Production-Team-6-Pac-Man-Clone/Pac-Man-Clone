@@ -28,6 +28,8 @@ public class GameManager : MonoBehaviour //To Do For Final Submission: Score, Ga
 
     public GameObject middlelife;
 
+    public GameObject Pelletes;
+
     public int score { get; private set; }
     public int lives { get; private set; }
 
@@ -67,6 +69,7 @@ public class GameManager : MonoBehaviour //To Do For Final Submission: Score, Ga
             Debug.Log("Player has quit");
             Application.Quit();
         }
+       
     }
 
     public void RestartGame()
@@ -91,7 +94,12 @@ public class GameManager : MonoBehaviour //To Do For Final Submission: Score, Ga
 
     private void LevelTwo() //This line may prove redundant. Too bad! It's here for now. -AC//
     {
+        SceneManager.LoadScene("Stage2");
+    }
 
+    private void Credits()
+    {
+        SceneManager.LoadScene("Credits");
     }
 
     private void ResetState(){
@@ -176,6 +184,19 @@ public class GameManager : MonoBehaviour //To Do For Final Submission: Score, Ga
         SetScore(this.score + pellete.points);
 
         scoreText.text = ""+this.score;
+
+        if (!HasPelletsLeft())
+        {
+            if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("Stage2"))
+            {
+                Invoke(nameof(Credits), 3.0f);
+            }
+            else
+            {
+                Invoke(nameof(LevelTwo), 3.0f);
+            }
+            
+        }
     }
 
     public void PowerPelletEaten (PowerPellet pellete)
@@ -183,13 +204,15 @@ public class GameManager : MonoBehaviour //To Do For Final Submission: Score, Ga
         PelletEaten(pellete);
 
         StartCoroutine(powercountdown());
+
+        
     }
 
     IEnumerator powercountdown() //Power Up Countdown
     {
         Debug.Log("POWER UP!");
 
-        GameObject.Find("Ghosts").GetComponent<GhostFrightened>(); //Would this even work? We will have to find out
+       // GameObject.Find("Ghosts").GetComponent<GhostFrightened>(); //Would this even work? We will have to find out
 
         ps.isInhaling = true;
 
@@ -200,6 +223,19 @@ public class GameManager : MonoBehaviour //To Do For Final Submission: Score, Ga
         Debug.Log("POWER UP GONE!");
 
 
+
+    }
+
+    private bool HasPelletsLeft()
+    {
+        for (int i =0; i < Pelletes.transform.childCount; i++)
+        {
+            if (Pelletes.transform.GetChild(i).gameObject.activeInHierarchy)
+            {
+                return true;
+            }
+        }
+        return false;
 
     }
 }
