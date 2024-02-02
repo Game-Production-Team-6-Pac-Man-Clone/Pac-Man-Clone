@@ -34,6 +34,9 @@ public class GameManager : MonoBehaviour //To Do For Final Submission: Score, Ga
 
     public GameObject DieMusic;
 
+    public int lifeCheck;
+
+
     public int score { get; private set; }
     public int lives { get; private set; }
 
@@ -127,10 +130,20 @@ public class GameManager : MonoBehaviour //To Do For Final Submission: Score, Ga
     {
         this.score = score;
         scoreCount = score;
+        lifeCheck = score;
         Debug.Log("highscorecount" + scoreCount);
         Debug.Log("normalscorecount" + this.score);
         CheckHighScore();
         UpdateHighscoreText();
+    }
+
+    private void addLives(int lifeCheck)
+    {
+        if (lifeCheck >= 10000) 
+        {
+            SetLives(this.lives + 1);
+            lifeCheck = 0;
+        }
     }
 
     void CheckHighScore()
@@ -177,9 +190,16 @@ public class GameManager : MonoBehaviour //To Do For Final Submission: Score, Ga
         {
             firstlife.gameObject.SetActive(false);
         }
+
         else if (this.lives < 2)
         {
             middlelife.gameObject.SetActive(false);
+        }
+
+        else if (this.lives > 3)
+        {
+            this.lives = 3;
+            Debug.Log("Cap of 3 Lives");
         }
     }
 
