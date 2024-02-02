@@ -94,11 +94,11 @@ public class Player : MonoBehaviour
         transform.Translate(new Vector2(Input.GetAxis("Horizontal"), 0) * Time.deltaTime * playerSpeed);
         if (transform.position.x > horizontalScreenLimit)
         {
-            transform.position = new Vector2((transform.position.x * -1f) + .5f, transform.position.y);
+            transform.position = new Vector2((transform.position.x * -1f) + .3f, transform.position.y);
         }
         if (transform.position.x < -horizontalScreenLimit)
                 {
-            transform.position = new Vector2((transform.position.x * -1f) - .5f, transform.position.y);
+            transform.position = new Vector2((transform.position.x * -1f) - .3f, transform.position.y);
         }
     }
     }
