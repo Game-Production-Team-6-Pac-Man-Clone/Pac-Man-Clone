@@ -30,6 +30,10 @@ public class GameManager : MonoBehaviour //To Do For Final Submission: Score, Ga
 
     public GameObject Pelletes;
 
+    public GameObject BackgroundMusic;
+
+    public GameObject DieMusic;
+
     public int score { get; private set; }
     public int lives { get; private set; }
 
@@ -47,6 +51,8 @@ public class GameManager : MonoBehaviour //To Do For Final Submission: Score, Ga
         middlelife.gameObject.SetActive(true);
         lastlife.gameObject.SetActive(true);
         score = 0;
+        BackgroundMusic.SetActive(true);
+        DieMusic.SetActive(false);
     }
     IEnumerator startcountdown() //Short countdown at start of game
     {
@@ -115,6 +121,8 @@ public class GameManager : MonoBehaviour //To Do For Final Submission: Score, Ga
     private void GameOver()
     {
         Playerlosttext.enabled = true; //gameover text
+        BackgroundMusic.SetActive(false);
+        DieMusic.SetActive(true);
     }
 
     private void SetScore(int score)
@@ -216,7 +224,7 @@ public class GameManager : MonoBehaviour //To Do For Final Submission: Score, Ga
 
         ps.isInhaling = true;
 
-        yield return new WaitForSecondsRealtime(8);
+        yield return new WaitForSecondsRealtime(16);
 
         ps.isInhaling = false;
 
