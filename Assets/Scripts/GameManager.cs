@@ -33,6 +33,8 @@ public class GameManager : MonoBehaviour //To Do For Final Submission: Score, Ga
 
     public int ghostMultiplier { get; private set; } = 1; //Flesh out if we decide to add score multiplier. -AC//
 
+    public Player ps;
+
     private void Start()
     {
         UpdateHighscoreText();
@@ -186,8 +188,14 @@ public class GameManager : MonoBehaviour //To Do For Final Submission: Score, Ga
     IEnumerator powercountdown() //Power Up Countdown
     {
         Debug.Log("POWER UP!");
+
         GameObject.Find("Ghosts").GetComponent<GhostFrightened>(); //Would this even work? We will have to find out
+
+        ps.isInhaling = true;
+
         yield return new WaitForSecondsRealtime(8);
+
+        ps.isInhaling = false;
 
         Debug.Log("POWER UP GONE!");
 
