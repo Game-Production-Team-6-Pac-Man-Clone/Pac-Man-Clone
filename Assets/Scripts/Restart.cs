@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class Restart : MonoBehaviour
 {
-    // Start is called before the first frame update
+    
     private void Start()
     {
         StartCoroutine(endscreen());
@@ -16,9 +16,5 @@ public class Restart : MonoBehaviour
         yield return new WaitForSecondsRealtime(5);
         SceneManager.LoadScene("MainMenu");
     }
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    
 }
