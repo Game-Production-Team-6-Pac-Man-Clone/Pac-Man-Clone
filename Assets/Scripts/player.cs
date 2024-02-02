@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 [RequireComponent(typeof(Movement))]
@@ -11,30 +12,69 @@ public class Player : MonoBehaviour
 
     public bool isInhaling;
 
+    private Animator animator;
+
     public Movement movement { get; private set; }
 
     private void Awake()
     {
         this.movement = GetComponent<Movement>();
         isInhaling = false;
+        animator = GetComponent<Animator>();
     }
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.W))
         {
             this.movement.SetDirection(Vector2.up);
+
+            if (isInhaling == true)
+            {
+                animator.Play("KirbySuckUp");
+            }
+            else if (isInhaling == false)
+            {
+                animator.Play("KirbyUp");
+            }
         }
         else if (Input.GetKeyDown(KeyCode.S))
         {
             this.movement.SetDirection(Vector2.down);
+
+            if (isInhaling == true)
+            {
+                animator.Play("KirbySuckDown");
+            }
+            else if (isInhaling == false)
+            {
+                animator.Play("KirbyDown");
+            }
         }
         else if (Input.GetKeyDown(KeyCode.A))
         {
             this.movement.SetDirection(Vector2.left);
+
+            if (isInhaling == true)
+            {
+                animator.Play("KirbySuckLeft");
+            }
+            else if (isInhaling == false)
+            {
+                animator.Play("KirbyLeft");
+            }
         }
         else if (Input.GetKeyDown(KeyCode.D))
         {
             this.movement.SetDirection(Vector2.right);
+
+            if (isInhaling == true)
+            {
+                animator.Play("KirbySuckRight");
+            }
+            else if (isInhaling == false)
+            {
+                animator.Play("KirbyRight");
+            }
         }
 
         //float angle = Mathf.Atan2(this.movement.direction.y, this.movement.direction.x); //MAKES PAC-MAN LOOK FORWARD//
