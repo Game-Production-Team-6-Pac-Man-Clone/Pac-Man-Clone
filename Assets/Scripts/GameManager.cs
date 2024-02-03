@@ -269,7 +269,7 @@ public class GameManager : MonoBehaviour //To Do For Final Submission: Score, Ga
 
         player.isInhaling = true;
 
-        yield return new WaitForSecondsRealtime(16);
+        yield return new WaitForSecondsRealtime(8);
 
         player.isInhaling = false;
 
