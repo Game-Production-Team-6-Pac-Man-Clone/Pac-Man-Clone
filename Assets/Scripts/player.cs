@@ -12,6 +12,8 @@ public class Player : MonoBehaviour
 
     public bool isInhaling;
 
+    public bool playerDeath;
+
     private Animator animator;
 
     public Movement movement { get; private set; }
@@ -20,6 +22,7 @@ public class Player : MonoBehaviour
     {
         this.movement = GetComponent<Movement>();
         isInhaling = false;
+        playerDeath = false;
         animator = GetComponent<Animator>();
     }
     private void Update()
@@ -75,8 +78,14 @@ public class Player : MonoBehaviour
             {
                 animator.Play("KirbyRight");
             }
-        }
 
+        
+        }
+        if (playerDeath == true)
+        {
+            animator.Play("KirbyDie");
+        }
+        else { }
         //float angle = Mathf.Atan2(this.movement.direction.y, this.movement.direction.x); //MAKES PAC-MAN LOOK FORWARD//
         //this.transform.rotation = Quaternion.AngleAxis(angle * Mathf.Rad2Deg, Vector3.forward);
 

@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
+
 public class GameManager : MonoBehaviour //To Do For Final Submission: Score, Game Over, Level Change. -AC//
 {
     public Ghost[] ghosts;
@@ -54,6 +55,7 @@ public class GameManager : MonoBehaviour //To Do For Final Submission: Score, Ga
         score = 0;
         BackgroundMusic.SetActive(true);
         DieMusic.SetActive(false);
+        //animator = GetComponent<Animator>();
     }
     IEnumerator startcountdown() //Short countdown at start of game
     {
@@ -76,7 +78,12 @@ public class GameManager : MonoBehaviour //To Do For Final Submission: Score, Ga
             Debug.Log("Player has quit");
             Application.Quit();
         }
-       
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            Debug.Log("Death");
+            PlayerDefeated();
+        }
+
     }
 
     public void RestartGame()
@@ -119,11 +126,26 @@ public class GameManager : MonoBehaviour //To Do For Final Submission: Score, Ga
     }
 
 
-    private void GameOver()
+    private void GameOver() //realdeath?
     {
         Playerlosttext.enabled = true; //gameover text
+
         BackgroundMusic.SetActive(false);
+
         DieMusic.SetActive(true);
+
+        this.player.gameObject.SetActive(true);
+
+        player.playerDeath = true;
+
+        StartCoroutine(deathscene());
+       
+    }
+    IEnumerator deathscene() //Short countdown at start of game
+    {
+        yield return new WaitForSecondsRealtime(1.5f);
+
+        RestartGame();
     }
 
     private void SetScore(int score)
@@ -173,6 +195,8 @@ public class GameManager : MonoBehaviour //To Do For Final Submission: Score, Ga
         SetScore(this.score + ghost.points);
     }
 
+
+
     public void PlayerDefeated() //Call game over from here perhaps? -AC//
     {
         this.player.gameObject.SetActive(false);
@@ -216,10 +240,12 @@ public class GameManager : MonoBehaviour //To Do For Final Submission: Score, Ga
         {
             if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("Stage2"))
             {
+                
                 Invoke(nameof(Credits), 3.0f);
             }
             else
             {
+                
                 Invoke(nameof(LevelTwo), 3.0f);
             }
             
