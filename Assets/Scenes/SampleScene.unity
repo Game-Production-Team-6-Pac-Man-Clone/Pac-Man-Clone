@@ -12777,6 +12777,7 @@ MonoBehaviour:
   Pelletes: {fileID: 802231912}
   BackgroundMusic: {fileID: 699485970}
   DieMusic: {fileID: 1918824793}
+  lifeCheck: 0
 --- !u!4 &373230324
 Transform:
   m_ObjectHideFlags: 0

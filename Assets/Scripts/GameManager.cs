@@ -191,9 +191,10 @@ public class GameManager : MonoBehaviour //To Do For Final Submission: Score, Ga
             firstlife.gameObject.SetActive(false);
         }
 
-        else if (this.lives < 2)
+        if (this.lives < 2)
         {
             middlelife.gameObject.SetActive(false);
+
         }
 
         else if (this.lives > 3)
