@@ -41152,10 +41152,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1187266831653764207, guid: 3b0b0fa4ad69f7747a9e41db290401e0, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2140464739364278712, guid: 3b0b0fa4ad69f7747a9e41db290401e0, type: 3}
       propertyPath: speed
       value: 0.6
       objectReference: {fileID: 0}
+    - target: {fileID: 2140464739364278712, guid: 3b0b0fa4ad69f7747a9e41db290401e0, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 8160945139296812858}
     - target: {fileID: 2140464739364278712, guid: 3b0b0fa4ad69f7747a9e41db290401e0, type: 3}
       propertyPath: rayDistance
       value: 0.2
@@ -41163,6 +41171,10 @@ PrefabInstance:
     - target: {fileID: 2928853816627803797, guid: 3b0b0fa4ad69f7747a9e41db290401e0, type: 3}
       propertyPath: m_Name
       value: GhostBase
+      objectReference: {fileID: 0}
+    - target: {fileID: 3041234721938714325, guid: 3b0b0fa4ad69f7747a9e41db290401e0, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7582991348375033913, guid: 3b0b0fa4ad69f7747a9e41db290401e0, type: 3}
       propertyPath: m_LocalPosition.x

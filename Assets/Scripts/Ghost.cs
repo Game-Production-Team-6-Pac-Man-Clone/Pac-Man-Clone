@@ -110,6 +110,8 @@ public class Ghost : MonoBehaviour
         {
             if (player.isInhaling == true){
                 gameObject.SetActive(false);
+
+                Invoke("Respawn", 5);
             } else {
                 FindObjectOfType<GameManager>().PlayerDefeated();
             }
