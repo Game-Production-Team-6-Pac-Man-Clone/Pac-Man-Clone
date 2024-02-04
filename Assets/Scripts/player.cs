@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics.Tracing;
 using System.Runtime.CompilerServices;
+using UnityEditor;
 using UnityEngine;
 
 [RequireComponent(typeof(Movement))]
@@ -27,6 +29,13 @@ public class Player : MonoBehaviour
     }
     private void Update()
     {
+        if (playerDeath == true)
+        {
+            animator.Play("KirbyDie");
+            
+        }
+        else { }
+
         if (Input.GetKeyDown(KeyCode.W))
         {
             this.movement.SetDirection(Vector2.up);
@@ -81,11 +90,7 @@ public class Player : MonoBehaviour
 
         
         }
-        if (playerDeath == true)
-        {
-            animator.Play("KirbyDie");
-        }
-        else { }
+        
         //float angle = Mathf.Atan2(this.movement.direction.y, this.movement.direction.x); //MAKES PAC-MAN LOOK FORWARD//
         //this.transform.rotation = Quaternion.AngleAxis(angle * Mathf.Rad2Deg, Vector3.forward);
 

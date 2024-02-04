@@ -145,7 +145,7 @@ public class GameManager : MonoBehaviour //To Do For Final Submission: Score, Ga
     {
         yield return new WaitForSecondsRealtime(1.5f);
 
-        RestartGame();
+        SceneManager.LoadScene("MainMenu");
     }
 
     private void SetScore(int score)
