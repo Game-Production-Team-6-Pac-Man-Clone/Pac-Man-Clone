@@ -3872,7 +3872,7 @@ GameObject:
   - component: {fileID: 176440864}
   m_Layer: 8
   m_Name: grass
-  m_TagString: Untagged
+  m_TagString: wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11636,6 +11636,91 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   points: 10
+--- !u!1001 &342754468
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1999417970039824274, guid: 3b0b0fa4ad69f7747a9e41db290401e0, type: 3}
+      propertyPath: m_Mass
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1999417970039824274, guid: 3b0b0fa4ad69f7747a9e41db290401e0, type: 3}
+      propertyPath: m_BodyType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2140464739364278712, guid: 3b0b0fa4ad69f7747a9e41db290401e0, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1904564589}
+    - target: {fileID: 2140464739364278712, guid: 3b0b0fa4ad69f7747a9e41db290401e0, type: 3}
+      propertyPath: rayDistance
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2928853816627803797, guid: 3b0b0fa4ad69f7747a9e41db290401e0, type: 3}
+      propertyPath: m_Name
+      value: GhostBase
+      objectReference: {fileID: 0}
+    - target: {fileID: 3041234721938714325, guid: 3b0b0fa4ad69f7747a9e41db290401e0, type: 3}
+      propertyPath: m_Size.x
+      value: 0.09
+      objectReference: {fileID: 0}
+    - target: {fileID: 3041234721938714325, guid: 3b0b0fa4ad69f7747a9e41db290401e0, type: 3}
+      propertyPath: m_Size.y
+      value: 0.09
+      objectReference: {fileID: 0}
+    - target: {fileID: 3041234721938714325, guid: 3b0b0fa4ad69f7747a9e41db290401e0, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7582991348375033913, guid: 3b0b0fa4ad69f7747a9e41db290401e0, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.004
+      objectReference: {fileID: 0}
+    - target: {fileID: 7582991348375033913, guid: 3b0b0fa4ad69f7747a9e41db290401e0, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.732
+      objectReference: {fileID: 0}
+    - target: {fileID: 7582991348375033913, guid: 3b0b0fa4ad69f7747a9e41db290401e0, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7582991348375033913, guid: 3b0b0fa4ad69f7747a9e41db290401e0, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7582991348375033913, guid: 3b0b0fa4ad69f7747a9e41db290401e0, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7582991348375033913, guid: 3b0b0fa4ad69f7747a9e41db290401e0, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7582991348375033913, guid: 3b0b0fa4ad69f7747a9e41db290401e0, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7582991348375033913, guid: 3b0b0fa4ad69f7747a9e41db290401e0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7582991348375033913, guid: 3b0b0fa4ad69f7747a9e41db290401e0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7582991348375033913, guid: 3b0b0fa4ad69f7747a9e41db290401e0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 3b0b0fa4ad69f7747a9e41db290401e0, type: 3}
 --- !u!1001 &346250287
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12270,7 +12355,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 615d48d6f23fe4d47bb560cf343a3d17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ghosts: []
+  ghost: {fileID: 0}
   player: {fileID: 1904564589}
   pellete: {fileID: 3323287660915994568, guid: d91a2aeb2d844014aaa1565d17393d7a, type: 3}
   highscoreText: {fileID: 1603141414}
@@ -12284,6 +12369,7 @@ MonoBehaviour:
   BackgroundMusic: {fileID: 699485970}
   DieMusic: {fileID: 1918824793}
   lifeCheck: 0
+  Restart: {fileID: 0}
 --- !u!4 &373230324
 Transform:
   m_ObjectHideFlags: 0
@@ -59481,7 +59567,8 @@ PrefabInstance:
       value: Canvas
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 4992024235782131167, guid: 19344a6c7ae32d34e8bb230601a0284d, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 19344a6c7ae32d34e8bb230601a0284d, type: 3}
@@ -59504,3 +59591,4 @@ SceneRoots:
   - {fileID: 1205952625}
   - {fileID: 699485972}
   - {fileID: 1918824795}
+  - {fileID: 342754468}

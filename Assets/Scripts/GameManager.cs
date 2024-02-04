@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour //To Do For Final Submission: Score, Game Over, Level Change. -AC//
 {
-    public Ghost[] ghosts;
+    public Ghost ghost;
 
     public Player player;
 
@@ -56,7 +56,7 @@ public class GameManager : MonoBehaviour //To Do For Final Submission: Score, Ga
         score = 0;
         BackgroundMusic.SetActive(true);
         DieMusic.SetActive(false);
-        Restart.SetActive(false);
+        
         //animator = GetComponent<Animator>();
     }
     IEnumerator startcountdown() //Short countdown at start of game
@@ -119,10 +119,6 @@ public class GameManager : MonoBehaviour //To Do For Final Submission: Score, Ga
     }
 
     private void ResetState(){
-
-        for (int i = 0; i < this.ghosts.Length; i++) {
-            this.ghosts[i].gameObject.SetActive(true);
-        }
 
         this.player.ResetState();
     }
@@ -198,6 +194,7 @@ public class GameManager : MonoBehaviour //To Do For Final Submission: Score, Ga
     public void GhostEaten(Ghost ghost)
     {
         SetScore(this.score + ghost.points);
+        this.ghost.gameObject.SetActive(false);
     }
 
 
@@ -262,6 +259,7 @@ public class GameManager : MonoBehaviour //To Do For Final Submission: Score, Ga
         PelletEaten(pellete);
 
         StartCoroutine(powercountdown());
+
 
         
     }

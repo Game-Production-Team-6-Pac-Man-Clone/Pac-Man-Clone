@@ -114,5 +114,6 @@ public class Player : MonoBehaviour
                 {
             transform.position = new Vector2((transform.position.x * -1f) - .3f, transform.position.y);
         }
-    }
-    }
+    }}
+
+
