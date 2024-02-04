@@ -9,6 +9,8 @@ public class Ghost : MonoBehaviour
     public Transform target;
     public Player player;
 
+    public Ghost ghost;
+
     public int points = 200;
     public GhostFrightened frightened { get; private set; }
 
@@ -104,9 +106,13 @@ public class Ghost : MonoBehaviour
 
         private void OnTriggerEnter2D(Collider2D collider)
     {
+        if(collider.gameObject.layer == LayerMask.NameToLayer("Player"))
         {
-        FindObjectOfType<GameManager>().PlayerDefeated();
-
+            if (player.isInhaling == true){
+                gameObject.SetActive(false);
+            } else {
+                FindObjectOfType<GameManager>().PlayerDefeated();
+            }
         }
-}
+    }
 }

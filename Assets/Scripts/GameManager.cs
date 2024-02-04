@@ -194,7 +194,7 @@ public class GameManager : MonoBehaviour //To Do For Final Submission: Score, Ga
     public void GhostEaten(Ghost ghost)
     {
         SetScore(this.score + ghost.points);
-        this.ghost.gameObject.SetActive(false);
+        
     }
 
 
