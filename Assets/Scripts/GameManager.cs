@@ -37,7 +37,6 @@ public class GameManager : MonoBehaviour //To Do For Final Submission: Score, Ga
 
     public int lifeCheck;
 
-    public GameObject Restart;
 
     public int score { get; private set; }
     public int lives { get; private set; }
@@ -133,8 +132,6 @@ public class GameManager : MonoBehaviour //To Do For Final Submission: Score, Ga
 
         DieMusic.SetActive(true);
 
-        Restart.SetActive(true);
-
         this.player.gameObject.SetActive(true);
 
         player.playerDeath = true;
@@ -144,7 +141,7 @@ public class GameManager : MonoBehaviour //To Do For Final Submission: Score, Ga
     }
     IEnumerator deathscene() //Short countdown at start of game
     {
-        yield return new WaitForSecondsRealtime(999f);
+        yield return new WaitForSecondsRealtime(8f);
 
         SceneManager.LoadScene("MainMenu");
 

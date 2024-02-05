@@ -12316,7 +12316,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 615d48d6f23fe4d47bb560cf343a3d17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ghost: {fileID: 0}
+  ghost: {fileID: 702065593}
   player: {fileID: 8160945139296812858}
   pellete: {fileID: 3323287660915994568, guid: d91a2aeb2d844014aaa1565d17393d7a, type: 3}
   highscoreText: {fileID: 532533769}
@@ -12330,7 +12330,6 @@ MonoBehaviour:
   BackgroundMusic: {fileID: 292697024}
   DieMusic: {fileID: 1481048565}
   lifeCheck: 0
-  Restart: {fileID: 0}
 --- !u!4 &373230324
 Transform:
   m_ObjectHideFlags: 0
@@ -19984,6 +19983,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   points: 10
+--- !u!114 &702065593 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2140464739364278712, guid: 3b0b0fa4ad69f7747a9e41db290401e0, type: 3}
+  m_PrefabInstance: {fileID: 1617799042}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6e45f86a4d6bf748bdfe17e5638bc7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &706543366 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 701672906413215991, guid: d91a2aeb2d844014aaa1565d17393d7a, type: 3}
