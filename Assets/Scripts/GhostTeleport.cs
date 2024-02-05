@@ -30,7 +30,8 @@ public class GhostTeleport : MonoBehaviour
 
     IEnumerator Teleport()
     {
-        yield return new WaitForSeconds(6f);
+        int wait = Random.Range (6, 24);
+        yield return new WaitForSeconds(wait);
         gameObject.transform.position = new Vector2(portal.transform.position.x, portal.transform.position.y);
     }
 }

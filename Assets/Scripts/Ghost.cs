@@ -9,6 +9,8 @@ public class Ghost : MonoBehaviour
     public Transform target;
     public Player player;
 
+    public GameObject portal;
+
     public Ghost ghost;
 
     public int points = 200;
@@ -31,6 +33,8 @@ public class Ghost : MonoBehaviour
 
     // which layers to raycast for
     [SerializeField] LayerMask rayLayer;
+
+
  
     private void Awake()
     {
@@ -98,11 +102,6 @@ public class Ghost : MonoBehaviour
         rb.AddForce(currentDir * speed);
     }
 
-        public void ResetState()
-    {
-        
-        
-        }
 
         private void OnTriggerEnter2D(Collider2D collider)
     {
@@ -110,11 +109,18 @@ public class Ghost : MonoBehaviour
         {
             if (player.isInhaling == true){
                 gameObject.SetActive(false);
-
-                Invoke("Respawn", 5);
+                Invoke(nameof(ResetState), 6.0f);
+                gameObject.transform.position = new Vector2(portal.transform.position.x, portal.transform.position.y);
+                
             } else {
                 FindObjectOfType<GameManager>().PlayerDefeated();
             }
         }
     }
+
+    public void ResetState()
+    {
+        this.gameObject.SetActive(true);
+
+        }
 }

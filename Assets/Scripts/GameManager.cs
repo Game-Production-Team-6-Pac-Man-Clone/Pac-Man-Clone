@@ -121,6 +121,7 @@ public class GameManager : MonoBehaviour //To Do For Final Submission: Score, Ga
     private void ResetState(){
 
         this.player.ResetState();
+
     }
 
 
