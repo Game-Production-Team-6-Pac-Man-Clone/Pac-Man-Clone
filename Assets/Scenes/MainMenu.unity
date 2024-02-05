@@ -384,7 +384,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Press any buttom to play
+  m_text: Press any button to play
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0b167d6044b72f340b3e1d8c1b8de62f, type: 2}
   m_sharedMaterial: {fileID: -1303286454485774064, guid: 0b167d6044b72f340b3e1d8c1b8de62f, type: 2}
@@ -488,15 +488,15 @@ RectTransform:
   m_GameObject: {fileID: 1861457247}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.8512033, y: 0.8512033, z: 0.8512033}
+  m_LocalScale: {x: 0.8512034, y: 0.8512034, z: 0.8512034}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2012454105}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -7.4335, y: -1.459}
-  m_SizeDelta: {x: 2122.7, y: 1180.8}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0.0011024, y: -0.9589844}
+  m_SizeDelta: {x: 335.63, y: 177.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1861457249
 MonoBehaviour:

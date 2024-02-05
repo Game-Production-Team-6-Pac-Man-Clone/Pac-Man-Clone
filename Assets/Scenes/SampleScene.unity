@@ -12358,7 +12358,6 @@ MonoBehaviour:
   BackgroundMusic: {fileID: 699485970}
   DieMusic: {fileID: 1918824793}
   lifeCheck: 0
-  Restart: {fileID: 0}
 --- !u!4 &373230324
 Transform:
   m_ObjectHideFlags: 0
@@ -12592,8 +12591,8 @@ Transform:
   m_GameObject: {fileID: 377365301}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.18, z: 1.98}
-  m_LocalScale: {x: 0.7439174, y: 0.7439174, z: 0.7439174}
+  m_LocalPosition: {x: -0.0087, y: 0.1887, z: 1.98}
+  m_LocalScale: {x: 0.76240534, y: 0.74555403, z: 0.7439174}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
