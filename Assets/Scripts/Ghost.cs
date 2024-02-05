@@ -19,6 +19,7 @@ public class Ghost : MonoBehaviour
 
     // movement speed
     [SerializeField] float speed;
+    [SerializeField] private float maxSpeed;
 
     // possible movent directions
     Vector2[] directions = { Vector2.up, Vector2.right, Vector2.down, Vector2.left };
@@ -55,6 +56,11 @@ public class Ghost : MonoBehaviour
         Vector3 endpoint = currentDir * rayDistance;
         
         Debug.DrawLine(transform.position, transform.position + endpoint, Color.green);
+
+        if (rb.velocity.magnitude > maxSpeed)
+        {
+            rb.velocity = (Vector2)Vector3.ClampMagnitude((Vector3)rb.velocity, maxSpeed);
+        }
 
         
         if(hit2D.collider != null)
